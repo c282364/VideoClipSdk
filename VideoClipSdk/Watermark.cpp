@@ -292,6 +292,14 @@ int Watermark::ProcessDouyin(cv::Mat &matImageSource)
         }
 
     }
+    if (maxLoc2.x < 2)
+    {
+        maxLoc2.x = 2;
+    }
+    if (maxLoc2.y < 2)
+    {
+        maxLoc2.y = 2;
+    }
     Mat imageROI2 = image_dst(cv::Rect(maxLoc2.x - 2, maxLoc2.y - 2, m_matMaskAccount.cols + 2, m_matMaskAccount.rows + 2));
     imageROI2.setTo(cv::Scalar(255, 255, 255));
     //cv::Mat matAccountCur;
